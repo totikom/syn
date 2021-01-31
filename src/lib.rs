@@ -990,3 +990,14 @@ pub fn parse_file(mut content: &str) -> Result<File> {
     file.shebang = shebang;
     Ok(file)
 }
+
+#[macro_use]
+extern crate arbitrary;
+#[derive(Arbitrary, Debug)]
+pub struct __fuzz_struct_parse_file {
+    content: Box<str>,
+}
+pub fn __fuzz_parse_file(mut input: __fuzz_struct_parse_file) {
+    parse_file(&*input.content);
+}
+

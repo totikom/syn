@@ -38,6 +38,7 @@ test = ["syn-test-suite/all-features"]
 proc-macro2 = { version = "1.0.23", default-features = false }
 quote = { version = "1.0", optional = true, default-features = false }
 unicode-xid = "0.2"
+arbitrary = { version = "0.4", features = ["derive"]  }
 
 [dev-dependencies]
 anyhow = "1.0"
